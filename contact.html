@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/contactGroupe2" method="post">
+      <label for="Name">Nom:</label><br />
+      <input
+        type="text"
+        name="Name"
+        id="Name"
+        required
+        placeholder="Veuillez entrer votre nom"
+      /><br />
+      <label for="mail">Email:</label><br />
+      <input
+        type="email"
+        name="mail"
+        id="mail"
+        required
+        placeholder="Veuillez entrer votre mail"
+      /><br />
+      <label for="Tel">Telephone</label><br />
+      <input
+        type="tel"
+        name="Tel"
+        id="Tel"
+        required
+        placeholder="veuillez entrer votre numéro de telephone"
+      /><br />
+      <label for="msg">Message</label><br />
+      <textarea
+        name="msg"
+        id="msg"
+        required
+        placeholder="Les sujet de votre choix"
+      ></textarea
+      ><br />
+      <button type="submit">Valider</button>
+    </form>
+  </body>
+</html>
