@@ -101,7 +101,7 @@
               </ul>
             </div>
             <div class="link">
-              <button>Commander</button>
+              <button onclick="ouvrirPopup()">Commander</button>
             </div>
           </div>
           <div
@@ -129,7 +129,7 @@
               </ul>
             </div>
             <div class="link">
-              <button>Commander</button>
+               <button onclick="ouvrirPopup()">Commander</button>
             </div>
           </div>
           <div
@@ -159,7 +159,7 @@
               </ul>
             </div>
             <div class="link">
-              <button>Commander</button>
+               <button onclick="ouvrirPopup()">Commander</button>
             </div>
           </div>
           <div
@@ -187,15 +187,77 @@
               </ul>
             </div>
             <div class="link">
-              <button>Commander</button>
+ <button onclick="ouvrirPopup()">Commander</button>
             </div>
           </div>
         </div>
       </section>
+
+              <div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="fermer" onclick="fermerPopup()">&times;</span>
+    <h2>Commander ce plat</h2>
+    <p>Souhaitez-vous confirmer cette commande ?</p>
+    <button>Confirmer</button>
+    <!-- <button style="background-color:white; color: #1f2f49;">Annuler</button> -->
+  </div>
+</div>
     </main>
 
-    <footer>
-      <p>&copy;copyright Groupe2</p>
+  <footer class="animate-fade-in">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>Groupe2 est une équipe dédiée à créer des solutions innovantes et de qualité pour nos clients. Notre passion pour l'excellence nous guide dans chaque projet.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-whatsapp"></i></a>
+                    <!-- <a href="#" aria-label="Instagram">📸</a> -->
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Services à Table</a></li>
+                    <li><a href="#">Service Traiteur</a></li>
+                    <!-- <li><a href="#">Consultation</a></li> -->
+                    <li><a href="#">Service De Reservation</a></li>
+                    <!-- <li><a href="#">Formation</a></li> -->
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Dejeumer</a></li>
+                    <li><a href="#">Boisson</a></li>
+                    <li><a href="#">Dessert</a></li>
+                    <!-- <li><a href="#">Contact</a></li> -->
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Metode de Payement</h3>
+                
+                <i class="fa-brands fa-paypal fa-2x"></i>
+                <i class="fa-brands fa-cc-visa fa-2x"></i>
+                <i class="fas fa-wallet fa-2x"></i> 
+
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Groupe2. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#">Politique de Confidentialité</a>
+                <a href="#">Conditions d'Utilisation</a>
+                <a href="#">Plan du Site</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
     </footer>
     <script src="srcipt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
