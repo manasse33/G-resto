@@ -131,6 +131,16 @@ nav ul li a:hover {
   margin-top: 40px;
 }
 
+.home-dessert {
+  margin-top: 40px;
+  width: 100%;
+  height: 400px;
+  background: url(images/dessert\ 1.jpg) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 .home-boisson {
   margin-top: 40px;
   width: 100%;
@@ -142,25 +152,41 @@ nav ul li a:hover {
   position: relative;
 }
 
-.home-dessert {
+.home-lunch {
   margin-top: 40px;
   width: 100%;
   height: 400px;
-  background: url(images/dessert\ 1.jpg) no-repeat center center/cover;
+  background: url('images/dej\ 2.webp') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.home-lunch {
-  margin-top: 40px;
-  width: 100%;
-  height: 400px;
-  background: url("images/dej\ 2.webp") no-repeat center center/cover;
+.home-lunch .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* slogan au centre */
+.home-lunch .slogan h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.home-lunch .slogan p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .home-snacks {
@@ -1958,14 +1984,7 @@ body {
     box-sizing: border-box;
 }
 
-/* 4. DÉSACTIVER AOS sur mobile si nécessaire */
-@media (max-width: 768px) {
-    [data-aos] {
-        transform: none !important;
-        opacity: 1 !important;
-        transition: none !important;
-    }
-}
+
 
 /* 5. CORRECTIONS SPÉCIFIQUES pour les animations slides */
 [data-aos="slide-left"],
@@ -1984,35 +2003,10 @@ body {
     max-width: calc(100% - 100px);
 }
 
-/* 6. CONTENEUR AVEC MASQUE pour animations complexes */
-.animation-mask {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
 
-.animation-mask [data-aos] {
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-}
 
-/* 7. OPTIMISATION PERFORMANCE */
-[data-aos] {
-    will-change: auto;
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
 
-/* Une fois l'animation terminée */
-.aos-animate {
-    will-change: auto;
-}
 
-/* 8. SOLUTION pour conteneurs flex/grid */
-.flex-container {
-    overflow: hidden;
-    min-width: 0; /* Important pour flexbox */
-}
 
 .grid-container {
     overflow: hidden;
@@ -2024,47 +2018,52 @@ body {
     box-sizing: border-box;
 }
 
-/* 10. CONFIGURATION RESPONSIVE complète */
-@media (max-width: 480px) {
-    /* Désactiver les animations slide sur très petits écrans */
-    [data-aos^="slide"] {
-        transform: none !important;
-        opacity: 1 !important;
-    }
-    
-    /* Garder seulement fade et zoom */
-    [data-aos="fade-up"],
-    [data-aos="fade-down"],
-    [data-aos="zoom-in"] {
-        /* Animations autorisées sur mobile */
-    }
-}
 
-.popup {
+
+.modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
 }
 
-.popup-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
+.modal-content {
+  background: white;
+  padding: 30px;
   border-radius: 10px;
-  width: 300px;
+  max-width: 400px;
   text-align: center;
-  position: relative;
 }
 
-.fermer {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 22px;
+.payment-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.payment-btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #1f2f49;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.payment-btn:hover {
+  background-color: #2f3f69;
+}
+
+.confirm-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }

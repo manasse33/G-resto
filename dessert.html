@@ -56,32 +56,25 @@
         <div class="container">
         <section>
           <div class="section-title">
-            <h1>Pourquoi nos snacks?</h1>
+            <h1>Pourquoi nos Desserts?</h1>
           </div>
 
           <div class="about-snacks">
             <div class="about-text">
-              <p>
-                Petite faim, grand plaisir ! Nos snacks sont pensés pour
-                combler vos envies à tout moment de la journée. Entre croquants,
-                fondants et saveurs épicées ou sucrées, chaque bouchée est un
-                vrai régal. Que vous soyez pressé ou simplement gourmand,
-                offrez-vous une pause savoureuse avec nos snacks faits maison
-              </p>
-              <p>
-                Petite faim, grand plaisir ! Nos snacks sont pensés pour
-                combler vos envies à tout moment de la journée. Entre croquants,
-                fondants et saveurs épicées ou sucrées, chaque bouchée est un
-                vrai régal. Que vous soyez pressé ou simplement gourmand,
-                offrez-vous une pause savoureuse avec nos snacks faits maison
-              </p>
-              <p>
-                *Petite faim, grand plaisir ! Nos snacks sont pensés pour
-                combler vos envies à tout moment de la journée. Entre croquants,
-                fondants et saveurs épicées ou sucrées, chaque bouchée est un
-                vrai régal. Que vous soyez pressé ou simplement gourmand,
-                offrez-vous une pause savoureuse avec nos snacks faits maison
-              </p>
+ <p>
+  Chez G‑Resto, chaque dessert est une promesse de plaisir. Confectionnés avec des ingrédients frais et choisis avec soin, 
+  nos chefs pâtissiers marient tradition et créativité pour créer des douceurs aussi belles que savoureuses.
+</p>
+
+<p>
+  Que vous soyez amateur de crèmes onctueuses, de gâteaux moelleux ou de fruits délicatement travaillés, 
+  notre carte de desserts a de quoi ravir toutes les envies. Chaque recette est pensée pour éveiller les sens et laisser un souvenir délicieux.
+</p>
+
+<p>
+  Offrez-vous un moment de pure gourmandise, à partager ou à savourer en solo. Chez nous, le dessert n’est pas une simple fin de repas, 
+  c’est une expérience sucrée, généreuse et inoubliable.
+</p>
             </div>
 
             <div class="feature-list">
@@ -126,7 +119,8 @@
               </div>
               <span class="dessert-price">5.000 FCFA</span>
               <div class="link">
-                <button onclick="ouvrirPopup()">Commander</button>
+                <button onclick="openModal('Smoothie',5000)">Commander</button>
+
               </div>
             </div>
           </div>
@@ -151,7 +145,8 @@
               </div>
               <span class="dessert-price">XAF: 10.000 </span>
               <div class="link">
-                <button onclick="ouvrirPopup()">Commander</button>
+                <button onclick="openModal('Gâteau Framboise et Chocolat',10000)">Commander</button>
+
               </div>
             </div>
           </div>
@@ -172,7 +167,8 @@
               </div>
               <span class="dessert-price">XAF:15.000</span>
               <div class="link">
-                 <button onclick="ouvrirPopup()">Commander</button>
+                 <button onclick="openModal('Moka et Macarons',15000)">Commander</button>
+
               </div>
             </div>
           </div>
@@ -196,7 +192,8 @@
               </div>
               <span class="dessert-price">XAF:7.500</span>
               <div class="link">
-                 <button onclick="ouvrirPopup()">Commander</button>
+                 <button onclick="openModal('Gâteau Chocolat et Vanille',7500)">Commander</button>
+
               </div>
             </div>
           </div>
@@ -217,7 +214,8 @@
               </div>
               <span class="dessert-price">XAF: 6.500</span>
               <div class="link">
-                 <button onclick="ouvrirPopup()">Commander</button>
+                 <button onclick="openModal('Moka au Chocolat',6500)">Commander</button>
+
               </div>
             </div>
           </div>
@@ -238,22 +236,34 @@
               </div>
               <span class="dessert-price">XAF: 8000</span>
               <div class="link">
-                <button onclick="ouvrirPopup()">Commander</button>
+                <button onclick="openModal('Dessert aux fruits',8000)">Commander</button>
+
               </div>
             </div>
           </div>
         </div>
 
-                <div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="fermer" onclick="fermerPopup()">&times;</span>
-    <h2>Commander ce plat</h2>
-    <p>Souhaitez-vous confirmer cette commande ?</p>
-    <button>Confirmer</button>
-    <!-- <button style="background-color:white; color: #1f2f49;">Annuler</button> -->
+      </section>
+
+      
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <h2>Choisissez votre méthode de paiement</h2>
+
+    <p><strong>Plat :</strong> <span id="selectedDish"></span></p>
+
+    <input type="number" id="tableNumber" placeholder="Numéro de table" style="padding: 10px; width: 100%; margin: 15px 0; border-radius: 5px; border: 1px solid #ccc;" />
+
+    <div class="payment-options">
+      <button class="payment-btn" onclick="selectPayment('Mobile Money')">Mobile Money</button>
+      <button class="payment-btn" onclick="selectPayment('Espèces')">Espèces</button>
+    </div>
+
+    <p id="selectedMethod" style="margin-top: 10px;"></p>
+
+    <button class="confirm-btn" onclick="confirmOrder()">Confirmer la commande</button>
   </div>
 </div>
-      </section>
     </main>
 
   <footer class="animate-fade-in">
@@ -292,11 +302,10 @@
             </div>
             
             <div class="footer-section">
-                <h3>Metode de Payement</h3>
+                <h3>Methode
+ de Payement</h3>
                 
-                <i class="fa-brands fa-paypal fa-2x"></i>
-                <i class="fa-brands fa-cc-visa fa-2x"></i>
-                <i class="fas fa-wallet fa-2x"></i> 
+                             <img src="images/momo.jpg" width="200px" height="80px" alt=""> 
 
             </div>
         </div>

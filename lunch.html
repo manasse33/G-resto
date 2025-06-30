@@ -38,18 +38,14 @@
   </nav>
 </header>
     <main>
-      <section class="home-lunch">
-        <div class="overlay">
-          <div class="slogan">
-            <!-- <p>
-              <span
-                >Commencez votre journée <br />
-                avec un délicieux petit-déjeuner</span
-              >
-            </p> -->
-          </div>
-        </div>
-      </section>
+         <section class="home-lunch">
+  <div class="overlay">
+    <div class="slogan">
+      <h1>Nos Desserts Généreux</h1>
+      <p>Douceur, fraîcheur et plaisir dans chaque bouchée.</p>
+    </div>
+  </div>
+</section>
 
       <section class="produit">
         <div class="section-title">
@@ -82,7 +78,7 @@
               </ul>
             </div>
             <div class="link">
-              <button onclick="ouvrirPopup()">Commander</button>
+              <button onclick="openModal('Croissons',2000)">Commander</button>
             </div>
           </div>
 
@@ -111,7 +107,7 @@
               </ul>
             </div>
             <div class="link">
-              <button onclick="ouvrirPopup()">Commander</button>
+              <button onclick="openModal('Mikate',1000)">Commander</button>
             </div>
           </div>
 
@@ -139,7 +135,7 @@
               </ul>
             </div>
             <div class="link">
-              <button onclick="ouvrirPopup()">Commander</button>
+              <button onclick="openModal('Salade',1500)">Commander</button>
             </div>
           </div>
         </div>
@@ -222,15 +218,28 @@
         </div>
       </section>
 
-             <div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="fermer" onclick="fermerPopup()">&times;</span>
-    <h2>Commander ce plat</h2>
-    <p>Souhaitez-vous confirmer cette commande ?</p>
-    <button>Confirmer</button>
-    <!-- <button style="background-color:white; color: #1f2f49;">Annuler</button> -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <h2>Choisissez votre méthode de paiement</h2>
+
+    <p><strong>Plat :</strong> <span id="selectedDish"></span></p>
+
+    <input type="number" id="tableNumber" placeholder="Numéro de table" style="padding: 10px; width: 100%; margin: 15px 0; border-radius: 5px; border: 1px solid #ccc;" />
+
+    <div class="payment-options">
+      <button class="payment-btn" onclick="selectPayment('Mobile Money')">Mobile Money</button>
+      <button class="payment-btn" onclick="selectPayment('Espèces')">Espèces</button>
+    </div>
+
+    <p id="selectedMethod" style="margin-top: 10px;"></p>
+
+    <button class="confirm-btn" onclick="confirmOrder()">Confirmer la commande</button>
   </div>
 </div>
+
+
+
+
 
     </main>
 
@@ -270,12 +279,9 @@
             </div>
             
             <div class="footer-section">
-                <h3>Metode de Payement</h3>
-                
-                <i class="fa-brands fa-paypal fa-2x"></i>
-                <i class="fa-brands fa-cc-visa fa-2x"></i>
-                <i class="fas fa-wallet fa-2x"></i> 
-
+                <h3>Methode
+ de Payement</h3>
+              <img src="images/momo.jpg" width="200px" height="80px" alt=""> 
             </div>
         </div>
         

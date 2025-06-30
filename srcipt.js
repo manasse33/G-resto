@@ -22,22 +22,63 @@
         // Exemple d'utilisation avec fetch/AJAX
      
 
+let selectedDish = "";
+let selectedPrice = 0;
 
-  function ouvrirPopup() {
-    document.getElementById("popup").style.display = "block";
+
+
+function selectPayment(method) {
+  selectedPayment = method;
+  document.getElementById("selectedMethod").innerText = `Méthode sélectionnée : ${method}`;
+}
+function openModal(dishName, price) {
+  selectedDish = dishName;
+  selectedPrice = price;
+
+  document.getElementById("selectedDish").innerText = `${dishName} - ${price} FCFA`;
+  document.getElementById("paymentModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("paymentModal").style.display = "none";
+  selectedPayment = "";
+  selectedDish = "";
+  document.getElementById("selectedMethod").innerText = "";
+  document.getElementById("tableNumber").value = "";
+  document.getElementById("selectedDish").innerText = "";
+}
+
+function confirmOrder() {
+  const tableNumber = document.getElementById("tableNumber").value;
+
+  if (!selectedDish || !tableNumber || !selectedPayment) {
+    alert("Remplissez tous les champs.");
+    return;
   }
 
-  function fermerPopup() {
-    document.getElementById("popup").style.display = "none";
-  }
+  const heure = new Date().toLocaleTimeString();
 
-  // Option : fermer le popup si on clique en dehors
-//   const newLocal = window.onclick = function (event) {
-//     let popup = document.getElementById("popup");
-//     if (event.target == popup) {
-//         popup.style.display = "none";
-//     }
-// };
+  const commande = {
+    plat: selectedDish,
+    prix: selectedPrice,
+    table: tableNumber,
+    paiement: selectedPayment,
+    heure: heure
+  };
+
+  // Sauvegarde dans localStorage
+  const commandes = JSON.parse(localStorage.getItem("commandes") || "[]");
+  commandes.push(commande);
+  localStorage.setItem("commandes", JSON.stringify(commandes));
+
+  // Affichage dans l'alerte
+  alert(`Commande confirmée !\nPlat : ${selectedDish}\nPrix : ${selectedPrice} FCFA\nTable : ${tableNumber}\nPaiement : ${selectedPayment}`);
+
+
+  closeModal();
+}
+
+
 
 
 
