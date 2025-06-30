@@ -1997,48 +1997,14 @@ body {
 }
 
 /* 7. OPTIMISATION PERFORMANCE */
-[data-aos] {
-    will-change: auto;
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
+
 
 /* Une fois l'animation terminée */
-.aos-animate {
-    will-change: auto;
-}
 
-/* 8. SOLUTION pour conteneurs flex/grid */
-.flex-container {
-    overflow: hidden;
-    min-width: 0; /* Important pour flexbox */
-}
 
-.grid-container {
-    overflow: hidden;
-    min-width: 0; /* Important pour CSS Grid */
-}
 
-/* 9. RESET pour éviter les conflits */
-* {
-    box-sizing: border-box;
-}
 
-/* 10. CONFIGURATION RESPONSIVE complète */
-@media (max-width: 480px) {
-    /* Désactiver les animations slide sur très petits écrans */
-    [data-aos^="slide"] {
-        transform: none !important;
-        opacity: 1 !important;
-    }
-    
-    /* Garder seulement fade et zoom */
-    [data-aos="fade-up"],
-    [data-aos="fade-down"],
-    [data-aos="zoom-in"] {
-        /* Animations autorisées sur mobile */
-    }
-}
+
 
 .popup {
   display: none;
