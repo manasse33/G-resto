@@ -1945,44 +1945,11 @@ body {
     max-width: 100vw;
 }
 
-/* 2. CONTENEUR SPÉCIFIQUE pour isoler les animations */
-.aos-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
 
-/* 3. PRÉVENTION sur les éléments animés */
-[data-aos] {
-    max-width: 100%;
-    box-sizing: border-box;
-}
 
-/* 4. DÉSACTIVER AOS sur mobile si nécessaire */
-@media (max-width: 768px) {
-    [data-aos] {
-        transform: none !important;
-        opacity: 1 !important;
-        transition: none !important;
-    }
-}
 
-/* 5. CORRECTIONS SPÉCIFIQUES pour les animations slides */
-[data-aos="slide-left"],
-[data-aos="slide-right"] {
-    transform: translate3d(0, 0, 0) !important;
-}
 
-/* Avant l'animation - empêcher le débordement */
-[data-aos="slide-left"]:not(.aos-animate) {
-    transform: translate3d(-100px, 0, 0);
-    max-width: calc(100% - 100px);
-}
 
-[data-aos="slide-right"]:not(.aos-animate) {
-    transform: translate3d(100px, 0, 0);
-    max-width: calc(100% - 100px);
-}
 
 /* 6. CONTENEUR AVEC MASQUE pour animations complexes */
 .animation-mask {
